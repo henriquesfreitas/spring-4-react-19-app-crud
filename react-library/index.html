@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react-library</title>
+
+    <!--
+      Polyfill for 'global' object.
+      This is necessary because some older libraries, like sockjs-client, expect a 'global'
+      variable to be defined, which is standard in Node.js but not in browsers.
+      This script sets 'window.global' to be the same as 'window', ensuring these
+      libraries can run correctly in a modern Vite/browser environment.
+      It must be placed in the <head> before the main application script is loaded.
+    -->
+    <script>
+      var global = window;
+    </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
